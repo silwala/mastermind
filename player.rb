@@ -2,8 +2,9 @@
 
 # parent color class
 class Player
-  def initialize(name, colors)
+  attr_reader :name
+
+  def initialize(name)
     @name = name
-    @colors = colors
   end
 end

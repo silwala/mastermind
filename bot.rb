@@ -3,10 +3,11 @@
 # class that creates a bot player(code maker)
 class Bot < Player
   NAMES = %w[Bot-John Bot-Tommy Bot-Timothy Bot-Charlie Bot-Hannah Bot-Lukas].freeze
-  attr_reader :name, :colors
+  attr_reader :colors
 
   def initialize(colors)
-    super(random_name, four_colors(colors))
+    @colors = four_colors(colors)
+    super(random_name)
   end
 
   def random_name

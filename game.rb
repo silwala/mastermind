@@ -12,7 +12,6 @@ class Game
   def play
     puts "#{@human_player.name}(codebreaker) vs #{@bot_player.name}(codemaker)"
     play_rounds
-
   end
 
   private
@@ -55,7 +54,7 @@ class Game
   end
 
   def check_valid(human_guess)
-    human_guess.all? { |color| COLOR_OPTIONS.include?(color) } && human_guess.length == 4
+    human_guess.all? { |color| COLOR_OPTIONS.include?(color.upcase) } && human_guess.length == 4
   end
 
   def winner?(human_guess)

@@ -3,7 +3,7 @@
 require_relative 'game'
 require_relative 'player'
 require_relative 'bot'
+require_relative 'human'
 
 game = Game.new
-p game.bot_name
-p game.bot_colors
+game.play
