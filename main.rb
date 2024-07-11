@@ -7,3 +7,4 @@ require_relative 'human'
 
 game = Game.new
 game.play
+p

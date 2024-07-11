@@ -8,6 +8,7 @@ class Bot < Player
   def initialize(colors)
     @colors = four_colors(colors)
     super(random_name)
+    puts @colors
   end
 
   def random_name

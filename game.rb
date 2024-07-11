@@ -32,16 +32,17 @@ class Game
 
   def play_rounds
     guesses = 0
-    human_guess = guess_colors
-    until guesses == 12 || winner?(human_guess)
+    until guesses == 12
       guesses += 1
       human_guess = guess_colors
+      return player_wins if winner?(human_guess)
     end
+    puts "You couldn't guess in 12 turns"
   end
 
   def choose_colors
     print "pick four colors from [#{COLOR_OPTIONS.join(' ')}]: "
-    gets.chomp.split(' ')
+    gets.chomp.upcase.split(' ')
   end
 
   def guess_colors
@@ -59,5 +60,9 @@ class Game
 
   def winner?(human_guess)
     human_guess.all? { |color| @bot_player.colors.include?(color) }
+  end
+
+  def player_wins
+    puts "#{@human_player.name} won!"
   end
 end
